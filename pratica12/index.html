@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Produtos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="logo">Controle de <span>Produtos</span></span>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Início</a>
+    <a href="pages/cadastro.html">Cadastro</a>
+    <a href="pages/listagem.html">Listagem <span class="badge" id="badgeProdutos">0</span></a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="container">
+
+  <div class="page-title">
+    <h1>Página Inicial</h1>
+    <p>Bem-vindo ao sistema de controle de produtos.</p>
+  </div>
+
+  <!-- cards de resumo -->
+  <div class="resumo-cards">
+    <div class="card-resumo">
+      <div class="icone">📦</div>
+      <div class="valor" id="statTotal">0</div>
+      <div class="label">Produtos cadastrados</div>
+    </div>
+    <div class="card-resumo">
+      <div class="icone">💰</div>
+      <div class="valor" id="statValor" style="font-size:1.3rem;">R$ 0,00</div>
+      <div class="label">Valor em estoque</div>
+    </div>
+    <div class="card-resumo">
+      <div class="icone">🏷️</div>
+      <div class="valor" id="statCategoria" style="font-size:1.2rem;">—</div>
+      <div class="label">Categoria principal</div>
+    </div>
+  </div>
+
+  <!-- info e links -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div class="form-card">
+      <h3 style="margin-bottom:16px;color:#2c3e50;font-size:1rem;">O que o sistema faz?</h3>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="font-size:0.88rem;color:#555;display:flex;gap:8px;">
+          <span>✅</span> Cadastro de produtos
+        </li>
+        <li style="font-size:0.88rem;color:#555;display:flex;gap:8px;">
+          <span>✅</span> Listagem com busca por nome, código ou descrição
+        </li>
+        <li style="font-size:0.88rem;color:#555;display:flex;gap:8px;">
+          <span>✅</span> Filtro por categoria
+        </li>
+        <li style="font-size:0.88rem;color:#555;display:flex;gap:8px;">
+          <span>✅</span> Controle de estoque
+        </li>
+        <li style="font-size:0.88rem;color:#555;display:flex;gap:8px;">
+          <span>✅</span> Dados salvos no navegador 
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-card" style="display:flex;flex-direction:column;gap:12px;">
+      <h3 style="color:#2c3e50;font-size:1rem;margin-bottom:4px;">Acesso rápido</h3>
+      <a href="pages/cadastro.html" class="btn btn-laranja" style="text-align:center;">
+        📝 Cadastrar novo produto
+      </a>
+      <a href="pages/listagem.html" class="btn btn-cinza" style="text-align:center;">
+        📋 Ver todos os produtos
+      </a>
+      <p style="font-size:0.78rem;color:#aaa;margin-top:auto;">
+        Os dados ficam salvos enquanto o navegador não limpar o cache.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+ Sistema de Cadastro de Produtos
+</footer>
+
+<div id="avisos"></div>
+
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

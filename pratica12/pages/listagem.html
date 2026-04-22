@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de Produtos</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="logo"><a href="../index.html" style="color:inherit;">Controle de <span>Produtos</span></a></span>
+  <div class="nav-links" id="navLinks">
+    <a href="../index.html">Início</a>
+    <a href="cadastro.html">Cadastro</a>
+    <a href="listagem.html">Listagem <span class="badge" id="badgeProdutos">0</span></a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="container">
+
+  <div class="page-title">
+    <h1>Listagem de Produtos</h1>
+    <p>Todos os produtos cadastrados no sistema.</p>
+  </div>
+
+  <!-- contadores -->
+  <div class="resumo-cards" style="margin-bottom:20px;">
+    <div class="card-resumo">
+      <div class="icone">📦</div>
+      <div class="valor" id="totalProdutos">0</div>
+      <div class="label">Total cadastrados</div>
+    </div>
+    <div class="card-resumo">
+      <div class="icone">💰</div>
+      <div class="valor" id="valorEstoque" style="font-size:1.2rem;">R$ 0,00</div>
+      <div class="label">Valor total em estoque</div>
+    </div>
+    <div class="card-resumo">
+      <div class="icone">⭐</div>
+      <div class="valor" id="maisCaro" style="font-size:1.2rem;">R$ 0,00</div>
+      <div class="label">Produto mais caro</div>
+    </div>
+  </div>
+
+  <!-- barra de busca e ordenação -->
+  <div class="barra-busca">
+    <input type="search" id="campoBusca" placeholder="Buscar por nome, código ou descrição...">
+    <select id="selectOrdem">
+      <option value="data">Mais recentes</option>
+      <option value="nome">Nome (A-Z)</option>
+      <option value="preco">Maior preço</option>
+      <option value="estoque">Maior estoque</option>
+    </select>
+    <a href="cadastro.html" class="btn btn-laranja">+ Novo produto</a>
+  </div>
+
+  <!-- filtros de categoria -->
+  <div class="filtros-cat">
+    <button class="filtro-btn ativo" data-cat="">Todos</button>
+    <button class="filtro-btn" data-cat="eletronico">Eletrônico</button>
+    <button class="filtro-btn" data-cat="alimento">Alimento</button>
+    <button class="filtro-btn" data-cat="vestuario">Vestuário</button>
+    <button class="filtro-btn" data-cat="limpeza">Limpeza</button>
+    <button class="filtro-btn" data-cat="papelaria">Papelaria</button>
+    <button class="filtro-btn" data-cat="outro">Outro</button>
+  </div>
+
+  <!-- info quantidade -->
+  <div class="info-listagem">
+    <span>Exibindo <strong id="qtdExibindo">0</strong> produto(s)</span>
+  </div>
+
+  <!-- tabela -->
+  <div class="tabela-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Categoria</th>
+          <th>Preço</th>
+          <th>Estoque</th>
+          <th>Cadastro</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="corpoTabela">
+        <!-- preenchido pelo JS -->
+      </tbody>
+    </table>
+
+    <div id="estadoVazio" class="vazio" style="display:none;">
+      <div class="icone-vazio">📭</div>
+      <p>Nenhum produto encontrado.<br>
+        <a href="cadastro.html" style="color:#f39c12;">Cadastre um produto</a> ou ajuste os filtros.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+ Sistema de Cadastro de Produtos
+</footer>
+
+<div id="avisos"></div>
+
+<script src="../js/store.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/list.js"></script>
+</body>
+</html>
