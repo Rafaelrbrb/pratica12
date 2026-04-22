@@ -65,6 +65,4 @@ cadastro-produtos/
 Os dados são salvos no **localStorage** do navegador, ou seja:
 
 - Ficam disponíveis mesmo após recarregar a página
-- São perdidos se o cache do navegador for limpo
-- Não são enviados para nenhum servidor
 
