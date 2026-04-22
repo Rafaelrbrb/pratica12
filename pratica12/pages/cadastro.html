@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Produto</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <span class="logo"
+        ><a href="../index.html" style="color: inherit"
+          >Controle de <span>Produtos</span></a
+        ></span
+      >
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html">Início</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="listagem.html"
+          >Listagem <span class="badge" id="badgeProdutos">0</span></a
+        >
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="container">
+      <div class="page-title">
+        <h1>Cadastro de Produto</h1>
+        <p>Preencha os campos abaixo para adicionar um produto ao sistema.</p>
+      </div>
+
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 300px;
+          gap: 20px;
+          align-items: start;
+        "
+      >
+        <div class="form-card">
+          <form id="formProduto" novalidate>
+            <div class="form-grid">
+              <!-- Nome -->
+              <div class="campo">
+                <label for="nome">Nome do produto *</label>
+                <input
+                  type="text"
+                  id="nome"
+                  placeholder="Ex: Notebook Dell Inspiron"
+                />
+                <span class="erro-msg" id="erro-nome"></span>
+              </div>
+
+              <!-- Código -->
+              <div class="campo">
+                <label for="codigo">Código *</label>
+                <div style="display: flex; gap: 8px">
+                  <input
+                    type="text"
+                    id="codigo"
+                    placeholder="Ex: PROD-1234"
+                    style="flex: 1"
+                  />
+                  <button
+                    type="button"
+                    id="btnGerarCodigo"
+                    class="btn btn-cinza"
+                    style="
+                      white-space: nowrap;
+                      padding: 10px 12px;
+                      font-size: 0.8rem;
+                    "
+                  >
+                    Gerar
+                  </button>
+                </div>
+                <span class="erro-msg" id="erro-codigo"></span>
+              </div>
+
+              <!-- Categoria -->
+              <div class="campo">
+                <label for="categoria">Categoria *</label>
+                <select id="categoria">
+                  <option value="">Selecione...</option>
+                  <option value="eletronico">Eletrônico</option>
+                  <option value="alimento">Alimento</option>
+                  <option value="vestuario">Vestuário</option>
+                  <option value="limpeza">Limpeza</option>
+                  <option value="papelaria">Papelaria</option>
+                  <option value="outro">Outro</option>
+                </select>
+                <span class="erro-msg" id="erro-categoria"></span>
+              </div>
+
+              <!-- Preço -->
+              <div class="campo">
+                <label for="preco">Preço (R$) *</label>
+                <input
+                  type="number"
+                  id="preco"
+                  placeholder="0.00"
+                  min="0"
+                  step="0.01"
+                />
+                <span class="erro-msg" id="erro-preco"></span>
+              </div>
+
+              <!-- Estoque -->
+              <div class="campo">
+                <label for="estoque">Quantidade em estoque *</label>
+                <input
+                  type="number"
+                  id="estoque"
+                  placeholder="0"
+                  min="0"
+                  step="1"
+                />
+                <span class="erro-msg" id="erro-estoque"></span>
+              </div>
+
+              <!-- Descrição -->
+              <div class="campo col-full">
+                <label for="descricao">Descrição *</label>
+                <textarea
+                  id="descricao"
+                  placeholder="Descreva o produto"
+                ></textarea>
+                <span class="erro-msg" id="erro-descricao"></span>
+              </div>
+
+              <!-- Botões -->
+              <div class="form-botoes">
+                <button type="button" id="btnLimpar" class="btn btn-cinza">
+                  Limpar
+                </button>
+                <button type="submit" class="btn btn-laranja">
+                  Salvar produto
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- lateral -->
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <div class="form-card">
+            <h4 style="margin-bottom: 12px; font-size: 0.9rem; color: #2c3e50">
+              Instruções
+            </h4>
+            <ul
+              style="
+                list-style: none;
+                font-size: 0.82rem;
+                color: #666;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+              "
+            >
+              <li>📌 Todos os campos são obrigatórios</li>
+              <li>🔢 O código pode ser gerado automaticamente.</li>
+              <li>📦 Estoque 0 = produto esgotado.</li>
+            </ul>
+          </div>
+          <a
+            href="listagem.html"
+            class="btn btn-cinza"
+            style="text-align: center"
+          >
+            Ver listagem →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer>Sistema de Cadastro de Produtos</footer>
+
+    <div id="avisos"></div>
+
+    <script src="../js/store.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/form.js"></script>
+  </body>
+</html>
